@@ -30,10 +30,11 @@ const custom = document.querySelector("#custom");
 custom.addEventListener("click", (event) => {
     removeGrid(dimension);
     dimension = prompt("Grid Dimension:", "");
-    if (dimension > 100 || dimension < 1) {
+    while (dimension > 100 || dimension < 1) {
         alert("Please select a dimension between 1 - 100")
         dimension = prompt("Grid Dimension:", "");
     };
+    // create a way to cancel the prompt or to handle if prompt != number
     createGrid(dimension);
 });
 
