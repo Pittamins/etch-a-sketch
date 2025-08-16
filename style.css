@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    height: 800px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.box {
+    flex: 1;
+    background-color: grey;
+    border: 2px, blue, solid;
+}
+
