@@ -22,8 +22,19 @@ createGrid(dimension);
 const box = document.querySelector(".box");
 
 container.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "salmon";
+    const newColor = randomColor();
+    console.log(newColor)
+    event.target.style.backgroundColor = `${newColor}`;
+    event.target.style.opacity -= '-.1';
+    console.log(event.target.style.opacity);
 });
+
+function randomColor() {
+    const randR = Math.floor(Math.random() * 255);
+    const randG = Math.floor(Math.random() * 255);
+    const randB = Math.floor(Math.random() * 255);
+    return `rgb(${randR}, ${randG}, ${randB})`
+}
 
 const custom = document.querySelector("#custom");
 
@@ -34,7 +45,10 @@ custom.addEventListener("click", (event) => {
         alert("Please select a dimension between 1 - 100")
         dimension = prompt("Grid Dimension:", "");
     };
-    // create a way to cancel the prompt or to handle if prompt != number
+    // I'm realizing prompts aren't the best way to handle this task,
+    // but the assignment was clearly to use a prompt instead of an input. 
+    // It might be a problem with my logic, but I don't currently see a way
+    // to cancel the prompt or deal with a non-integer.
     createGrid(dimension);
 });
 
